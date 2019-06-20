@@ -41,7 +41,7 @@ public class clientLogin extends AppCompatActivity {
             startActivity(i);
         }
         else{
-            Toast.makeText(getApplicationContext(), "Credentials did not match", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Details did not match", Toast.LENGTH_SHORT).show();
         }
     }
 }

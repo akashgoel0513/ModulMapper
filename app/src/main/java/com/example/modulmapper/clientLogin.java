@@ -37,7 +37,9 @@ public class clientLogin extends AppCompatActivity {
     }
     public void validate(String username, String password){
         if((username.equals("WintecClient")) && (password.equals("wintec@123"))){
+            boolean admin = true;
             Intent i = new Intent(clientLogin.this, ClientDashboard.class);
+            i.putExtra("admin", admin);
             startActivity(i);
         }
         else{

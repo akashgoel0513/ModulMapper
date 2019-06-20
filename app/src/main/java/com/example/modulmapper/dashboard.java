@@ -15,6 +15,8 @@ public class dashboard extends AppCompatActivity {
     ImageView logosplash;
     Animation frombottom;
     LinearLayout menuitems;
+    Boolean admin;
+    String pathway;
 
     Button btn_web, btn_networking, btn_database, btn_software;
 
@@ -28,31 +30,47 @@ public class dashboard extends AppCompatActivity {
         btn_software = (Button)findViewById(R.id.btn_software);
         btn_web = (Button)findViewById(R.id.btn_web);
 
+        Bundle data = getIntent().getExtras();
+        if(data==null){
+            return;
+        }
+
+        admin = data.getBoolean("admin");
+
         btn_database.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(dashboard.this, database.class);
+                pathway = "database";
+                Intent i = new Intent(dashboard.this, modules.class);
+                i.putExtra("pathway", pathway);
+                i.putExtra("admin", admin);
                 startActivity(i);
             }
         });
         btn_networking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(dashboard.this, networking.class);
+                pathway = "networking";
+                Intent i = new Intent(dashboard.this, modules.class);
+                i.putExtra("pathway", pathway);
                 startActivity(i);
             }
         });
         btn_software.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(dashboard.this, software.class);
+                pathway = "software";
+                Intent i = new Intent(dashboard.this, modules.class);
+                i.putExtra("pathway", pathway);
                 startActivity(i);
             }
         });
         btn_web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(dashboard.this, web.class);
+                pathway = "web";
+                Intent i = new Intent(dashboard.this, modules.class);
+                i.putExtra("pathway", pathway);
                 startActivity(i);
             }
         });

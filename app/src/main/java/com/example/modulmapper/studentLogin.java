@@ -13,7 +13,7 @@ public class studentLogin extends AppCompatActivity {
     EditText loginStudentID, loginPassword;
     Button login_btn, studentsignupBtn;
     DatabaseHelper db;
-    private boolean admin = false;
+    Boolean admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +41,13 @@ public class studentLogin extends AppCompatActivity {
                 String login_password = loginPassword.getText().toString();
                 Boolean checkLogin = db.checkLoginDetails(login_student_ID, login_password);
                 if(checkLogin == true){
+                    admin = false;
                     Intent i = new Intent(studentLogin.this, dashboard.class);
+                    i.putExtra("Admin", admin);
                     startActivity(i);
                 }
                 else if((login_student_ID.equals("WintecClient")) && (login_password.equals("wintec@123"))){
+                    admin = true;
                     Intent i = new Intent(studentLogin.this, dashboard.class);
                     i.putExtra("Admin", admin);
                     startActivity(i);

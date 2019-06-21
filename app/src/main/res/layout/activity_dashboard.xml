@@ -52,13 +52,15 @@
 
           //first menu row
 
+          //Second menu row
+
           <LinearLayout
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:layout_marginLeft="63dp"
               android:layout_marginBottom="10dp"
-              android:orientation="horizontal"
-              android:gravity="center">
+              android:gravity="center"
+              android:orientation="horizontal">
 
                //first menu item
 
@@ -84,11 +86,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/Transparent"
+                        android:gravity="center"
+                        android:text="Software Development"
                         android:textColor="@color/colorWhite"
                         android:textSize="12sp"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="Software Development"/>
+                        android:textStyle="bold" />
 
 
                </LinearLayout>
@@ -116,17 +118,15 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/Transparent"
+                        android:gravity="center"
+                        android:text="Web Development"
                         android:textColor="@color/colorWhite"
                         android:textSize="12sp"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:text="Web Development"/>
+                        android:textStyle="bold" />
 
 
                </LinearLayout>
           </LinearLayout>
-
-          //Second menu row
 
           <LinearLayout
               android:layout_width="wrap_content"
@@ -199,17 +199,5 @@
           </LinearLayout>
 
      </LinearLayout>
-
-     <TextView
-         android:id="@+id/adminView"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentStart="true"
-         android:layout_alignParentLeft="true"
-         android:layout_alignParentTop="true"
-         android:layout_marginStart="174dp"
-         android:layout_marginLeft="174dp"
-         android:layout_marginTop="323dp"
-         android:text="TextView" />
 
 </RelativeLayout>

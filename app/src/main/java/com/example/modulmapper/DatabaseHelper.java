@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_COURSES = "COURSES";
 
@@ -854,5 +856,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public Module getModule(String pathway) {
+        Module module = new Module();
+        SQLiteDatabase db = this.getWritableDatabase();
+        String selectQuery = "SELECT * FROM " + pathway + ";";
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                module.set_columnID(cursor.getInt(0));
+                module.set_moduleCode(cursor.getString(1));
+                module.set_moduleTitle(cursor.getString(2));
+                module.set_prescription(cursor.getString(3));
+                module.set_credits(cursor.getInt(4));
+            } while (cursor.moveToNext());
+        }
+
+        return module;
+    }
 
 }

@@ -9,13 +9,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class dashboard extends AppCompatActivity {
 
     ImageView logosplash;
     Animation frombottom;
     LinearLayout menuitems;
-    Boolean admin;
+    String admin;
     String pathway;
 
     Button btn_web, btn_networking, btn_database, btn_software;
@@ -35,7 +36,7 @@ public class dashboard extends AppCompatActivity {
             return;
         }
 
-        admin = data.getBoolean("admin");
+        admin = data.getString("admin");
 
         btn_database.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +54,7 @@ public class dashboard extends AppCompatActivity {
                 pathway = "networking";
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
+                i.putExtra("admin", admin);
                 startActivity(i);
             }
         });
@@ -62,6 +64,7 @@ public class dashboard extends AppCompatActivity {
                 pathway = "software";
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
+                i.putExtra("admin", admin);
                 startActivity(i);
             }
         });
@@ -71,6 +74,7 @@ public class dashboard extends AppCompatActivity {
                 pathway = "web";
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
+                i.putExtra("admin", admin);
                 startActivity(i);
             }
         });

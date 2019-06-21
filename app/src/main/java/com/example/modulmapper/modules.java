@@ -11,9 +11,8 @@ import android.widget.TextView;
 
 public class modules extends AppCompatActivity {
 
-    boolean admin;
     String pathway;
-    String ifAdmin;
+    String admin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +26,13 @@ public class modules extends AppCompatActivity {
             return;
         }
 
-        admin = data.getBoolean("admin");
+        admin = data.getString("admin");
         pathway = data.getString("pathway");
 
         TextView pathwayView = findViewById(R.id.pathwayView);
         pathwayView.setText(pathway);
         TextView adminView = findViewById(R.id.adminView);
-        if(admin == true) {
-            ifAdmin = "admin";
-        } else if(admin == false) {
-            ifAdmin = "student";
-        }
-        adminView.setText(ifAdmin);
+        adminView.setText(admin);
 
 
         /*FloatingActionButton fab = findViewById(R.id.fab);

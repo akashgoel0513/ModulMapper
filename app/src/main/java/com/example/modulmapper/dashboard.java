@@ -45,6 +45,7 @@ public class dashboard extends AppCompatActivity {
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
                 i.putExtra("admin", admin);
+                i.putExtra("year", 1);
                 startActivity(i);
             }
         });
@@ -55,6 +56,7 @@ public class dashboard extends AppCompatActivity {
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
                 i.putExtra("admin", admin);
+                i.putExtra("year", 1);
                 startActivity(i);
             }
         });
@@ -65,6 +67,7 @@ public class dashboard extends AppCompatActivity {
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
                 i.putExtra("admin", admin);
+                i.putExtra("year", 1);
                 startActivity(i);
             }
         });
@@ -75,6 +78,7 @@ public class dashboard extends AppCompatActivity {
                 Intent i = new Intent(dashboard.this, modules.class);
                 i.putExtra("pathway", pathway);
                 i.putExtra("admin", admin);
+                i.putExtra("year", 1);
                 startActivity(i);
             }
         });

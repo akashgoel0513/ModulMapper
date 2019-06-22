@@ -856,10 +856,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Module getModule(String pathway) {
+    public Module getModule(String pathway, int column_id) {
         Module module = new Module();
         SQLiteDatabase db = this.getWritableDatabase();
-        String selectQuery = "SELECT * FROM " + pathway + ";";
+        String selectQuery = "SELECT * FROM " + pathway + " WHERE COLUMN_ID = " + column_id + ";";
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {

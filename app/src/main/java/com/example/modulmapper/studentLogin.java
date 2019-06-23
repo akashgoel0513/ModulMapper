@@ -41,17 +41,17 @@ public class studentLogin extends AppCompatActivity {
                 String login_password = loginPassword.getText().toString();
                 Boolean checkLogin = db.checkLoginDetails(login_student_ID, login_password);
                 if(checkLogin == true){
-                    admin = "student";
+                    //admin = "student";
                     Intent i = new Intent(studentLogin.this, dashboard.class);
-                    i.putExtra("admin", admin);
+                   // i.putExtra("admin", admin);
                     startActivity(i);
                 }
-                else if((login_student_ID.equals("WintecClient")) && (login_password.equals("wintec@123"))){
-                    admin = "admin";
-                    Intent i = new Intent(studentLogin.this, dashboard.class);
-                    i.putExtra("admin", admin);
-                    startActivity(i);
-                }
+//                else if((login_student_ID.equals("WintecClient")) && (login_password.equals("wintec@123"))){
+//                    admin = "admin";
+//                    Intent i = new Intent(studentLogin.this, dashboard.class);
+//                    i.putExtra("admin", admin);
+//                    startActivity(i);
+//                }
                 else {
                     Toast.makeText(getApplicationContext(), "Wrong email or password", Toast.LENGTH_SHORT).show();
                 }

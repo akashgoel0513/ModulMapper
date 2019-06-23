@@ -17,6 +17,8 @@ public class modules extends AppCompatActivity {
     String admin;
     Module module = new Module();
     DatabaseHelper db;
+    ArrayList<Module> modules = new ArrayList<>();
+    int year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,27 +34,12 @@ public class modules extends AppCompatActivity {
 
         admin = data.getString("admin");
         pathway = data.getString("pathway");
+        year = data.getInt("year");
 
         TextView pathwayTitle = findViewById(R.id.pathwayTitle);
         pathwayTitle.setText(pathway);
 
-        if (pathway == "software") {
-
-            module = db.getModule("SOFTWARE_ENGINEERING_SEM_1");
-
-        } else if (pathway == "network") {
-
-            module = db.getModule("NETWORK_ENGINEERING_SEM_1");
-
-        } else if (pathway == "web") {
-
-            module = db.getModule("WEB_DEVELOPMENT_SEM_1");
-
-        } else if (pathway == "database") {
-
-            module = db.getModule("DATABASE_ARCHITECTURE_SEM_1");
-
-        }
+        addModules();
 
         TextView moduleTitle1 = findViewById(R.id.moduleTitle1);
         moduleTitle1.setText(module.get_moduleTitle());
@@ -80,6 +67,193 @@ public class modules extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
+    }
+
+    public void addModules() {
+        if (pathway == "software" && year == 1) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_1", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_2", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "network" && year == 1) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_1", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_2", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "web" && year == 1) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_1", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_2", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "database" && year == 1) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_1", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_2", x);
+                modules.add(module);
+            }
+
+        }
+
+        if (pathway == "software" && year == 2) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_3", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_4", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "network" && year == 2) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_3", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_4", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "web" && year == 2) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_3", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_4", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "database" && year == 2) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_3", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_4", x);
+                modules.add(module);
+            }
+
+        }
+
+        if (pathway == "software" && year == 3) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_5", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_6", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "network" && year == 3) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_5", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_6", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "web" && year == 3) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_5", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_6", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "database" && year == 3) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_5", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_6", x);
+                modules.add(module);
+            }
+
+        }
+
+        if (pathway == "software" && year == 4) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_7", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("SOFTWARE_ENGINEERING_SEM_8", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "network" && year == 4) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_7", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("NETWORK_ENGINEERING_SEM_8", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "web" && year == 4) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_7", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("WEB_DEVELOPMENT_SEM_8", x);
+                modules.add(module);
+            }
+
+        } else if (pathway == "database" && year == 4) {
+
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_7", x);
+                modules.add(module);
+            }
+            for (int x = 1; x <= 4; x++) {
+                module = db.getModule("DATABASE_ARCHITECTURE_SEM_8", x);
+                modules.add(module);
+            }
+
+        }
 
     }
 
